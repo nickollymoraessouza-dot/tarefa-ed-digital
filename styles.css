@@ -1,1 +1,51 @@
+body {
+background-color:antiquewhite #f4flea;
+color:blue;
+font-family: arial, sans-serif;
+}
 
+hearder {
+background-color: #6b2d5c;
+color: white;
+text-aling: center;
+padding: 30px;
+}
+
+h1 {
+    font-size:36px;
+}
+
+h2 (
+color: #6b2d5c;
+) 
+
+p  { 
+font-size: 18px;
+  line-height: 1.6;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+}
+
+section {
+    background-color: vhite;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+img{
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: auto;
+    border-radius: 12px;
+}
+
+figcaption {
+    text-aling: center;
+    font-size: 14px;
+    color: #6b2d5c
+}
