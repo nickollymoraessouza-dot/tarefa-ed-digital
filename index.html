@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ópera de Arame - Curitiba</title>
+
+    <title>Ópera de Arame | Curitiba</title>
 
     <style>
         * {
@@ -19,43 +20,91 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #f4f7f6;
-            color: #263238;
+            color: #222;
             line-height: 1.6;
         }
 
+        /* MENU */
         header {
-            height: 100vh;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #4fd18b;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #4fd18b;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
             background:
-                linear-gradient(rgba(0, 40, 30, 0.55), rgba(0, 20, 15, 0.7)),
-                url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Opera_de_Arame_Curitiba.jpg/1280px-Opera_de_Arame_Curitiba.jpg")
-                center/cover;
+                linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+                url("https://upload.wikimedia.org/wikipedia/commons/8/82/%C3%93pera_de_Arame_-_Curitiba.jpg")
+                center/cover no-repeat;
+
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
+            padding: 100px 20px 50px;
         }
 
-        .hero {
+        .hero-content {
+            color: white;
             max-width: 850px;
-            padding: 30px;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: clamp(45px, 8vw, 85px);
             margin-bottom: 15px;
-            text-shadow: 2px 2px 8px #000;
+            text-shadow: 3px 3px 10px #000;
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 22px;
             margin-bottom: 30px;
         }
 
-        .botao {
+        .button {
             display: inline-block;
             padding: 14px 28px;
-            background: #19a974;
+            background: #36b873;
             color: white;
             text-decoration: none;
             border-radius: 30px;
@@ -63,44 +112,42 @@
             transition: 0.3s;
         }
 
-        .botao:hover {
-            background: #0d7d55;
-            transform: scale(1.05);
+        .button:hover {
+            background: #27945b;
+            transform: translateY(-3px);
         }
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 30, 22, 0.95);
-            padding: 15px;
-            text-align: center;
-            z-index: 1000;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 18px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #4ee69d;
-        }
-
+        /* SEÇÕES */
         section {
-            padding: 80px 10%;
+            padding: 80px 20px;
         }
 
-        section h2 {
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
             text-align: center;
-            color: #087f5b;
-            font-size: 2.3rem;
-            margin-bottom: 35px;
+            margin-bottom: 50px;
         }
 
+        .section-title h2 {
+            font-size: 38px;
+            color: #164d38;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* SOBRE */
         .sobre {
+            background: white;
+        }
+
+        .sobre-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
@@ -109,15 +156,22 @@
 
         .sobre img {
             width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.2);
         }
 
-        .sobre p {
-            font-size: 1.1rem;
-            text-align: justify;
+        .sobre-texto h3 {
+            font-size: 30px;
+            color: #164d38;
+            margin-bottom: 15px;
         }
 
+        .sobre-texto p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* CARDS */
         .cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -129,77 +183,120 @@
             padding: 30px;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,.08);
             transition: 0.3s;
         }
 
         .card:hover {
             transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,.15);
         }
 
-        .card h3 {
-            color: #087f5b;
+        .card .icon {
+            font-size: 45px;
             margin-bottom: 15px;
         }
 
+        .card h3 {
+            color: #164d38;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        /* CURIOSIDADES */
         .curiosidades {
-            background: #dff5eb;
+            background: #164d38;
+            color: white;
         }
 
-        .lista {
-            max-width: 800px;
-            margin: auto;
+        .curiosidades .section-title h2,
+        .curiosidades .section-title p {
+            color: white;
         }
 
-        .lista li {
+        .curiosidades-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .curiosidade {
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 12px;
+            background: rgba(255,255,255,.08);
+        }
+
+        .curiosidade h3 {
+            color: #55d994;
+            margin-bottom: 8px;
+        }
+
+        /* VISITA */
+        .visita {
             background: white;
-            margin: 12px 0;
-            padding: 15px 20px;
-            border-radius: 10px;
-            list-style-position: inside;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
 
-        .localizacao {
+        .info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
             text-align: center;
         }
 
-        .mapa {
-            margin-top: 25px;
-            width: 100%;
-            height: 350px;
-            border: 0;
+        .info-box {
+            padding: 30px;
+            background: #f1f5f3;
             border-radius: 15px;
         }
 
+        .info-box h3 {
+            color: #164d38;
+            margin-bottom: 10px;
+        }
+
+        /* RODAPÉ */
         footer {
-            background: #003c2d;
+            background: #0d281d;
             color: white;
             text-align: center;
-            padding: 30px;
+            padding: 30px 20px;
         }
 
         footer p {
-            margin: 5px;
+            color: #b8c8c0;
         }
 
+        /* RESPONSIVO */
         @media (max-width: 800px) {
-            .hero h1 {
-                font-size: 2.7rem;
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
             }
 
-            .sobre,
-            .cards {
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .sobre-grid,
+            .cards,
+            .curiosidades-grid,
+            .info {
                 grid-template-columns: 1fr;
             }
 
-            nav a {
-                margin: 0 6px;
-                font-size: 14px;
+            .hero h1 {
+                font-size: 50px;
             }
 
-            section {
-                padding: 60px 6%;
+            .hero p {
+                font-size: 18px;
             }
         }
     </style>
@@ -207,115 +304,227 @@
 
 <body>
 
-    <nav>
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#caracteristicas">Características</a>
-        <a href="#curiosidades">Curiosidades</a>
-        <a href="#localizacao">Localização</a>
-    </nav>
+    <header>
+        <nav>
+            <div class="logo">
+                Ópera<span> de Arame</span>
+            </div>
 
-    <header id="inicio">
-        <div class="hero">
-            <h1>Ópera de Arame</h1>
-            <p>
-                Um dos cartões-postais mais famosos de Curitiba,
-                cercado pela natureza e pela cultura.
-            </p>
-            <a href="#sobre" class="botao">Conheça o local</a>
-        </div>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#curiosidades">Curiosidades</a></li>
+                <li><a href="#visita">Visita</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="sobre">
-        <h2>Sobre a Ópera de Arame</h2>
+    <main>
 
-        <div class="sobre">
-            <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Opera_de_Arame_Curitiba.jpg/800px-Opera_de_Arame_Curitiba.jpg"
-                alt="Ópera de Arame em Curitiba"
-            >
-
-            <div>
-                <p>
-                    A Ópera de Arame é um dos principais pontos turísticos
-                    de Curitiba, no Paraná. O espaço possui uma estrutura
-                    metálica característica, com paredes transparentes,
-                    criando uma integração entre arquitetura e natureza.
-                </p>
-
-                <br>
+        <!-- INÍCIO -->
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <h1>Ópera de Arame</h1>
 
                 <p>
-                    O local é utilizado para apresentações culturais,
-                    shows, eventos e atividades artísticas. Ao redor do
-                    teatro existe uma área verde que torna o ambiente ainda
-                    mais especial.
+                    Um dos cartões-postais mais impressionantes
+                    de Curitiba, cercado pela natureza.
                 </p>
+
+                <a href="#sobre" class="button">
+                    Conheça o lugar
+                </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="caracteristicas">
-        <h2>Características</h2>
+        <!-- SOBRE -->
+        <section class="sobre" id="sobre">
+            <div class="container">
 
-        <div class="cards">
+                <div class="section-title">
+                    <h2>Sobre a Ópera de Arame</h2>
+                    <p>Arquitetura, cultura e natureza em um só lugar.</p>
+                </div>
 
-            <div class="card">
-                <h3>🏛️ Arquitetura</h3>
-                <p>
-                    Uma estrutura metálica marcante que se destaca
-                    em meio à vegetação.
-                </p>
+                <div class="sobre-grid">
+
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/8/82/%C3%93pera_de_Arame_-_Curitiba.jpg"
+                        alt="Ópera de Arame em Curitiba"
+                    >
+
+                    <div class="sobre-texto">
+                        <h3>Um símbolo de Curitiba</h3>
+
+                        <p>
+                            A Ópera de Arame é um dos espaços culturais
+                            mais conhecidos de Curitiba, no Paraná.
+                            Sua estrutura metálica e transparente
+                            cria uma aparência única em meio à vegetação.
+                        </p>
+
+                        <p>
+                            O espaço recebe apresentações culturais,
+                            shows e diferentes eventos ao longo do ano,
+                            tornando-se um importante ponto turístico
+                            e cultural da cidade.
+                        </p>
+
+                        <p>
+                            Sua arquitetura integrada à paisagem faz
+                            com que a visita seja uma experiência
+                            especial tanto durante o dia quanto à noite.
+                        </p>
+                    </div>
+
+                </div>
             </div>
+        </section>
 
-            <div class="card">
-                <h3>🌳 Natureza</h3>
-                <p>
-                    O teatro está integrado a uma área natural,
-                    proporcionando uma paisagem única.
-                </p>
+        <!-- CARDS -->
+        <section>
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>O que torna o lugar especial?</h2>
+                    <p>Algumas características que chamam a atenção dos visitantes.</p>
+                </div>
+
+                <div class="cards">
+
+                    <div class="card">
+                        <div class="icon">🏗️</div>
+                        <h3>Arquitetura</h3>
+                        <p>
+                            Uma estrutura metálica marcante,
+                            que se destaca pela sua aparência
+                            leve e transparente.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">🌳</div>
+                        <h3>Natureza</h3>
+                        <p>
+                            O espaço está integrado a uma área
+                            verde, proporcionando um cenário
+                            cercado por árvores e paisagens naturais.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">🎭</div>
+                        <h3>Cultura</h3>
+                        <p>
+                            O local é utilizado para apresentações,
+                            shows e eventos culturais.
+                        </p>
+                    </div>
+
+                </div>
             </div>
+        </section>
 
-            <div class="card">
-                <h3>🎭 Cultura</h3>
-                <p>
-                    O espaço recebe apresentações musicais,
-                    teatrais e diversos eventos culturais.
-                </p>
+        <!-- CURIOSIDADES -->
+        <section class="curiosidades" id="curiosidades">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Curiosidades</h2>
+                    <p>Descubra um pouco mais sobre esse ponto turístico.</p>
+                </div>
+
+                <div class="curiosidades-grid">
+
+                    <div class="curiosidade">
+                        <h3>📍 Localização</h3>
+                        <p>
+                            A Ópera de Arame fica em Curitiba,
+                            capital do estado do Paraná.
+                        </p>
+                    </div>
+
+                    <div class="curiosidade">
+                        <h3>🏛️ Estrutura</h3>
+                        <p>
+                            Sua estrutura metálica é uma das
+                            principais características que tornam
+                            o espaço facilmente reconhecível.
+                        </p>
+                    </div>
+
+                    <div class="curiosidade">
+                        <h3>🎶 Eventos</h3>
+                        <p>
+                            O espaço é conhecido por receber
+                            apresentações musicais e diversos
+                            eventos culturais.
+                        </p>
+                    </div>
+
+                    <div class="curiosidade">
+                        <h3>🌿 Paisagem</h3>
+                        <p>
+                            A construção está inserida em um
+                            cenário natural, criando uma combinação
+                            entre arquitetura e meio ambiente.
+                        </p>
+                    </div>
+
+                </div>
             </div>
+        </section>
 
-        </div>
-    </section>
+        <!-- VISITA -->
+        <section class="visita" id="visita">
 
-    <section id="curiosidades" class="curiosidades">
-        <h2>Curiosidades</h2>
+            <div class="container">
 
-        <ul class="lista">
-            <li>A Ópera de Arame é um dos símbolos turísticos de Curitiba.</li>
-            <li>Sua estrutura possui uma aparência leve e transparente.</li>
-            <li>O espaço combina arquitetura, cultura e natureza.</li>
-            <li>O local faz parte do complexo do Parque das Pedreiras.</li>
-            <li>A Ópera de Arame recebe diversos eventos ao longo do ano.</li>
-        </ul>
-    </section>
+                <div class="section-title">
+                    <h2>Planeje sua visita</h2>
+                    <p>Algumas informações para conhecer o local.</p>
+                </div>
 
-    <section id="localizacao" class="localizacao">
-        <h2>Onde fica?</h2>
+                <div class="info">
 
-        <p>
-            A Ópera de Arame está localizada em Curitiba, no estado do Paraná.
-        </p>
+                    <div class="info-box">
+                        <h3>📍 Onde fica?</h3>
+                        <p>
+                            Curitiba - Paraná, Brasil.
+                        </p>
+                    </div>
 
-        <iframe
-            class="mapa"
-            src="https://www.google.com/maps?q=Ópera%20de%20Arame%20Curitiba&output=embed"
-            loading="lazy">
-        </iframe>
-    </section>
+                    <div class="info-box">
+                        <h3>🌎 Cidade</h3>
+                        <p>
+                            Curitiba é conhecida por seus
+                            parques, áreas verdes e atrações culturais.
+                        </p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>📸 Dica</h3>
+                        <p>
+                            A arquitetura e o entorno natural
+                            rendem ótimas fotografias.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
 
     <footer>
-        <p>🌿 Ópera de Arame - Curitiba, Paraná</p>
-        <p>Site educativo sobre um dos cartões-postais de Curitiba.</p>
+        <p>
+            © 2026 - Site sobre a Ópera de Arame de Curitiba
+        </p>
+
+        <p>
+            Desenvolvido em HTML e CSS.
+        </p>
     </footer>
 
 </body>
