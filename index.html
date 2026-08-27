@@ -1,284 +1,322 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-    <title>ópera de Arame</title>
+    <title>Ópera de Arame - Curitiba</title>
 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7f6;
+            color: #263238;
+            line-height: 1.6;
+        }
+
+        header {
+            height: 100vh;
+            background:
+                linear-gradient(rgba(0, 40, 30, 0.55), rgba(0, 20, 15, 0.7)),
+                url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Opera_de_Arame_Curitiba.jpg/1280px-Opera_de_Arame_Curitiba.jpg")
+                center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero {
+            max-width: 850px;
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px #000;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #19a974;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            background: #0d7d55;
+            transform: scale(1.05);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 30, 22, 0.95);
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #4ee69d;
+        }
+
+        section {
+            padding: 80px 10%;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #087f5b;
+            font-size: 2.3rem;
+            margin-bottom: 35px;
+        }
+
+        .sobre {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .sobre img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .sobre p {
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h3 {
+            color: #087f5b;
+            margin-bottom: 15px;
+        }
+
+        .curiosidades {
+            background: #dff5eb;
+        }
+
+        .lista {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .lista li {
+            background: white;
+            margin: 12px 0;
+            padding: 15px 20px;
+            border-radius: 10px;
+            list-style-position: inside;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .localizacao {
+            text-align: center;
+        }
+
+        .mapa {
+            margin-top: 25px;
+            width: 100%;
+            height: 350px;
+            border: 0;
+            border-radius: 15px;
+        }
+
+        footer {
+            background: #003c2d;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        @media (max-width: 800px) {
+            .hero h1 {
+                font-size: 2.7rem;
+            }
+
+            .sobre,
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                margin: 0 6px;
+                font-size: 14px;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>A Famosa Ópera de Arame</h1>
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#caracteristicas">Características</a>
+        <a href="#curiosidades">Curiosidades</a>
+        <a href="#localizacao">Localização</a>
+    </nav>
 
-        <p>
-            A Ópera de Arame é um importante ponto turístico e cultural de Curitiba.
-            Inaugurada em 1992, destaca-se por sua estrutura tubular de metal,
-            teto transparente, lago e área verde ao redor. O teatro possui
-            capacidade para 1.572 espectadores e recebe diferentes tipos de apresentações.
-        </p>
-
-        <p>
-            Localizada na Rua João Gava, 920, no bairro Abranches, a Ópera de Arame
-            faz parte do Parque das Pedreiras Jaime Lerner, junto à Pedreira Paulo Leminski.
-            O complexo reúne natureza, cultura e espaços para grandes eventos.
-        </p>
-
-        <p>
-            Uma das curiosidades do local é o Vale da Música, que apresenta
-            música instrumental em um palco flutuante no lago.
-        </p>
+    <header id="inicio">
+        <div class="hero">
+            <h1>Ópera de Arame</h1>
+            <p>
+                Um dos cartões-postais mais famosos de Curitiba,
+                cercado pela natureza e pela cultura.
+            </p>
+            <a href="#sobre" class="botao">Conheça o local</a>
+        </div>
     </header>
 
-    <main>
-
-        <section>
-            <h2>Um dos cartões-postais mais marcantes de Curitiba</h2>
-
-            <p>
-                A Ópera de Arame é um dos principais pontos turísticos de Curitiba,
-                conhecida por sua arquitetura única e sua estrutura metálica.
-                Inaugurada em 1992, o espaço reúne cultura, história e natureza,
-                sendo um importante símbolo da cidade.
-            </p>
-        </section>
-
-
-        <section>
-            <h2>História</h2>
-
-            <p>
-                A Ópera de Arame foi inaugurada em 18 de março de 1992, em Curitiba.
-                Construída em apenas 75 dias, tornou-se um importante espaço cultural
-                da cidade, recebendo diversos eventos e apresentações ao longo dos anos.
-            </p>
-
-            <p>
-                Sua construção criou um espaço cultural integrado à natureza,
-                com estrutura metálica, lago e vegetação ao redor. Desde então,
-                tornou-se um dos principais símbolos turísticos e culturais de Curitiba.
-            </p>
-
-            <figure>
-                <img src="imagem_1.jpg"
-                     alt="Ópera de Arame cercada pelo lago e pela vegetação">
-
-                <figcaption>
-                    Ópera de Arame em Curitiba.
-                    Autor: informe o autor da imagem.
-                    Fonte: informe a fonte da imagem.
-                </figcaption>
-            </figure>
-
-        </section>
-
-
-        <section>
-            <h2>Importância Cultural</h2>
-
-            <p>
-                A Ópera de Arame é importante para a identidade cultural do Paraná
-                porque se tornou um símbolo de Curitiba, unindo arquitetura, natureza
-                e cultura. O espaço também valoriza eventos artísticos e ajuda a
-                representar a cidade e o estado como lugares de cultura, turismo e inovação.
-            </p>
-
-            <figure>
-                <img src="imagem_2.jpg"
-                     alt="Interior ou estrutura da Ópera de Arame">
-
-                <figcaption>
-                    Interior ou estrutura da Ópera de Arame.
-                    Autor: informe o autor da imagem.
-                    Fonte: informe a fonte da imagem.
-                </figcaption>
-            </figure>
-
-        </section>
-
-    </main>
-
-    <footer>
-        <p>Site sobre a Ópera de Arame - Curitiba, Paraná</p>
-    </footer>
-
-</body>
-
-    <p> site desenvolvido por: nickolly nascimento moraes souza </p>
-</footer>
-
-    </body>
-</html>
-!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>opera de arame- História e Arte</title>
-</head>
-
-<body>
-
-    <header>
-        <h1>opera de arame</h1>
-
-       <p>
-    A história, a arquitetura e a cultura de um dos principais cartões-postais de Curitiba.
-</p>
-
-<nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#historia">História</a>
-    <a href="#cultura">Cultura</a>
-    <a href="#curiosidades">Curiosidades</a>
-</nav>
-</header>
-
-<main>
-
     <section id="sobre">
+        <h2>Sobre a Ópera de Arame</h2>
 
-        <h2>O que é a Ópera de Arame?</h2>
+        <div class="sobre">
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Opera_de_Arame_Curitiba.jpg/800px-Opera_de_Arame_Curitiba.jpg"
+                alt="Ópera de Arame em Curitiba"
+            >
 
-        <p>
-            A Ópera de Arame é um teatro localizado em Curitiba, no Paraná.
-            É conhecida por sua arquitetura diferenciada, formada por tubos
-            de aço, estruturas metálicas e placas transparentes de policarbonato.
-            O espaço é cercado por um lago e possui uma passarela que dá acesso
-            ao auditório.
-        </p>
+            <div>
+                <p>
+                    A Ópera de Arame é um dos principais pontos turísticos
+                    de Curitiba, no Paraná. O espaço possui uma estrutura
+                    metálica característica, com paredes transparentes,
+                    criando uma integração entre arquitetura e natureza.
+                </p>
 
-        <figure>
-            <img src="imagem_1.jpg"
-                alt="Ópera de Arame em Curitiba">
-            <figcaption>
-                Ópera de Arame, um dos principais pontos turísticos de Curitiba.
-            </figcaption>
-        </figure>
+                <br>
 
+                <p>
+                    O local é utilizado para apresentações culturais,
+                    shows, eventos e atividades artísticas. Ao redor do
+                    teatro existe uma área verde que torna o ambiente ainda
+                    mais especial.
+                </p>
+            </div>
+        </div>
     </section>
 
+    <section id="caracteristicas">
+        <h2>Características</h2>
 
-    <section id="historia">
+        <div class="cards">
 
-        <h2>A história da Ópera de Arame</h2>
+            <div class="card">
+                <h3>🏛️ Arquitetura</h3>
+                <p>
+                    Uma estrutura metálica marcante que se destaca
+                    em meio à vegetação.
+                </p>
+            </div>
 
-        <p>
-            A Ópera de Arame foi projetada pelo arquiteto Domingos Bongestabs
-            e construída em apenas 75 dias. Sua inauguração aconteceu em
-            18 de março de 1992, tornando-se um importante espaço cultural
-            de Curitiba.
-        </p>
+            <div class="card">
+                <h3>🌳 Natureza</h3>
+                <p>
+                    O teatro está integrado a uma área natural,
+                    proporcionando uma paisagem única.
+                </p>
+            </div>
 
-        <p>
-            A construção utiliza aproximadamente 360 toneladas de aço e conta
-            com 2.400 bancos de tela de arame. Em 2006, o espaço passou por
-            uma reforma para manutenção e melhorias na segurança.
-        </p>
+            <div class="card">
+                <h3>🎭 Cultura</h3>
+                <p>
+                    O espaço recebe apresentações musicais,
+                    teatrais e diversos eventos culturais.
+                </p>
+            </div>
 
-        <p>
-            Ao longo dos anos, a Ópera de Arame recebeu diversos espetáculos,
-            shows e eventos culturais, tornando-se um dos símbolos da cidade
-            de Curitiba.
-        </p>
-
-        <figure>
-            <img src="imagem_2.jpg"
-                alt="Estrutura da Ópera de Arame">
-            <figcaption>
-                Estrutura metálica da Ópera de Arame.
-            </figcaption>
-        </figure>
-
+        </div>
     </section>
 
-
-    <section id="cultura">
-
-        <h2>Importância cultural</h2>
-
-        <p>
-            A Ópera de Arame possui grande importância para a cultura do Paraná.
-            O espaço une arquitetura, natureza e arte, sendo utilizado para
-            apresentações musicais, peças de teatro e outros eventos.
-        </p>
-
-        <p>
-            Localizada no Parque das Pedreiras, a Ópera de Arame também contribui
-            para o turismo de Curitiba e ajuda a valorizar a cultura e os espaços
-            históricos da cidade.
-        </p>
-
-        <p>
-            Sua arquitetura única tornou o local um dos principais símbolos
-            turísticos e culturais de Curitiba, sendo visitado por pessoas
-            de diferentes lugares.
-        </p>
-
-        <figure>
-            <img src="imagem_3.jpg"
-                alt="Interior do auditório da Ópera de Arame">
-            <figcaption>
-                Auditório da Ópera de Arame.
-            </figcaption>
-        </figure>
-
-    </section>
-
-
-    <section id="curiosidades">
-
+    <section id="curiosidades" class="curiosidades">
         <h2>Curiosidades</h2>
 
-        <div class="card">
-            <h3>Curiosidade 1</h3>
-            <p>
-                A Ópera de Arame foi construída em apenas 75 dias.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Curiosidade 2</h3>
-            <p>
-                Sua estrutura possui aproximadamente 360 toneladas de aço.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Curiosidade 3</h3>
-            <p>
-                O teatro é cercado por um lago artificial e o acesso ao
-                auditório é feito por uma passarela sobre a água.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Curiosidade 4</h3>
-            <p>
-                A Ópera de Arame e a Pedreira Paulo Leminski fazem parte
-                do Parque das Pedreiras, um importante complexo cultural
-                de Curitiba.
-            </p>
-        </div>
-
+        <ul class="lista">
+            <li>A Ópera de Arame é um dos símbolos turísticos de Curitiba.</li>
+            <li>Sua estrutura possui uma aparência leve e transparente.</li>
+            <li>O espaço combina arquitetura, cultura e natureza.</li>
+            <li>O local faz parte do complexo do Parque das Pedreiras.</li>
+            <li>A Ópera de Arame recebe diversos eventos ao longo do ano.</li>
+        </ul>
     </section>
 
-</main>
+    <section id="localizacao" class="localizacao">
+        <h2>Onde fica?</h2>
 
+        <p>
+            A Ópera de Arame está localizada em Curitiba, no estado do Paraná.
+        </p>
 
-<footer>
+        <iframe
+            class="mapa"
+            src="https://www.google.com/maps?q=Ópera%20de%20Arame%20Curitiba&output=embed"
+            loading="lazy">
+        </iframe>
+    </section>
 
-        <p>Site desenvolvido por: nickolly nascimento moraes souza </p>
-
-
-        <p>Projeto Educação Digital</p>
-
+    <footer>
+        <p>🌿 Ópera de Arame - Curitiba, Paraná</p>
+        <p>Site educativo sobre um dos cartões-postais de Curitiba.</p>
     </footer>
 
 </body>
-
-</html> 
+</html>
