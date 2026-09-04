@@ -53,7 +53,7 @@ header {
             rgba(0, 40, 30, 0.55),
             rgba(0, 20, 15, 0.7)
         ),
-        url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Opera_de_Arame_Curitiba.jpg/1280px-Opera_de_Arame_Curitiba.jpg")
+        url(imagem1.jpg)
         center / cover;
 
     display: flex;
