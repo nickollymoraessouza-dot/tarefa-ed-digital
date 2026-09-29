@@ -1,531 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Ópera de Arame | Curitiba</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f7f6;
-            color: #222;
-            line-height: 1.6;
-        }
-
-        /* MENU */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(8px);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: auto;
-            padding: 18px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .logo span {
-            color: #4fd18b;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #4fd18b;
-        }
-
-        /* HERO */
-        .hero {
-            min-height: 100vh;
-            background:
-                linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-                url("https://upload.wikimedia.org/wikipedia/commons/8/82/%C3%93pera_de_Arame_-_Curitiba.jpg")
-                center/cover no-repeat;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 100px 20px 50px;
-        }
-
-        .hero-content {
-            color: white;
-            max-width: 850px;
-        }
-
-        .hero h1 {
-            font-size: clamp(45px, 8vw, 85px);
-            margin-bottom: 15px;
-            text-shadow: 3px 3px 10px #000;
-        }
-
-        .hero p {
-            font-size: 22px;
-            margin-bottom: 30px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 14px 28px;
-            background: #36b873;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background: #27945b;
-            transform: translateY(-3px);
-        }
-
-        /* SEÇÕES */
-        section {
-            padding: 80px 20px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 38px;
-            color: #164d38;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: #666;
-        }
-
-        /* SOBRE */
-        .sobre {
-            background: white;
-        }
-
-        .sobre-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .sobre img {
-            width: 100%;
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0,0,0,.2);
-        }
-
-        .sobre-texto h3 {
-            font-size: 30px;
-            color: #164d38;
-            margin-bottom: 15px;
-        }
-
-        .sobre-texto p {
-            margin-bottom: 15px;
-            color: #555;
-        }
-
-        /* CARDS */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,.08);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0,0,0,.15);
-        }
-
-        .card .icon {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            color: #164d38;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: #666;
-        }
-
-        /* CURIOSIDADES */
-        .curiosidades {
-            background: #164d38;
-            color: white;
-        }
-
-        .curiosidades .section-title h2,
-        .curiosidades .section-title p {
-            color: white;
-        }
-
-        .curiosidades-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .curiosidade {
-            padding: 25px;
-            border: 1px solid rgba(255,255,255,.2);
-            border-radius: 12px;
-            background: rgba(255,255,255,.08);
-        }
-
-        .curiosidade h3 {
-            color: #55d994;
-            margin-bottom: 8px;
-        }
-
-        /* VISITA */
-        .visita {
-            background: white;
-        }
-
-        .info {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            text-align: center;
-        }
-
-        .info-box {
-            padding: 30px;
-            background: #f1f5f3;
-            border-radius: 15px;
-        }
-
-        .info-box h3 {
-            color: #164d38;
-            margin-bottom: 10px;
-        }
-
-        /* RODAPÉ */
-        footer {
-            background: #0d281d;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        footer p {
-            color: #b8c8c0;
-        }
-
-        /* RESPONSIVO */
-        @media (max-width: 800px) {
-
-            nav {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            nav ul {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .sobre-grid,
-            .cards,
-            .curiosidades-grid,
-            .info {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 50px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Poty Lazzarotto - História e Arte</title>
 </head>
 
 <body>
 
     <header>
-        <nav>
-            <div class="logo">
-                Ópera<span> de Arame</span>
-            </div>
+        <h1>Poty Lazzarotto</h1>
 
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#curiosidades">Curiosidades</a></li>
-                <li><a href="#visita">Visita</a></li>
-            </ul>
+        <p>
+            A história e a arte de um dos maiores artistas do Paraná.
+        </p>
+
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#historia">História</a>
+            <a href="#cultura">Cultura</a>
+            <a href="#curiosidades">Curiosidades</a>
         </nav>
     </header>
 
     <main>
 
-        <!-- INÍCIO -->
-        <section class="hero" id="inicio">
-            <div class="hero-content">
-                <h1>Ópera de Arame</h1>
+        <section id="sobre">
 
+            <h2>Quem foi Poty Lazzarotto?</h2>
+
+            <p>
+                Napoleon Potyguara Lazzarotto, conhecido como Poty Lazzarotto,
+                nasceu em Curitiba, no Paraná, em 29 de março de 1924.
+                Foi desenhista, gravador, ilustrador, muralista e professor.
+                Sua obra teve grande importância para a arte paranaense e brasileira.
+            </p>
+
+            <figure>
+                <img src="imagem_1.jpg"
+                    alt="Poty Lazzarotto">
+                <figcaption>
+                    Poty Lazzarotto e sua trajetória artística.
+                    Fonte: Museu Oscar Niemeyer.
+                </figcaption>
+            </figure>
+        <button class ="curtir">
+            ❤️ Curtir <span>0</span>
+            </button>
+        </section>
+
+
+        <section id="historia">
+
+            <h2>A trajetória de Poty</h2>
+
+            <p>
+                Poty começou a demonstrar interesse pelo desenho ainda criança,
+                em Curitiba. Em 1942, recebeu uma bolsa de estudos para estudar
+                na Escola Nacional de Belas Artes, no Rio de Janeiro.
+                Lá, teve contato com a gravura e estudou com o artista Carlos Oswald.
+            </p>
+
+            <p>
+                Em 1946, Poty foi para Paris com uma bolsa do governo francês,
+                onde estudou litografia na Escola de Belas Artes.
+                Ao retornar ao Brasil, continuou sua carreira como artista,
+                ilustrador e professor.
+            </p>
+
+            <p>
+                Poty também ficou conhecido por suas ilustrações de livros.
+                Trabalhou com importantes escritores brasileiros, como
+                Guimarães Rosa, Jorge Amado, Euclides da Cunha e Dalton Trevisan.
+            </p>
+
+            <figure>
+                <img src="imagem_2.jpg"
+                    alt="Obra de Poty Lazzarotto">
+                <figcaption>
+                    Obra de Poty Lazzarotto.
+                    Fonte: Museu Oscar Niemeyer.
+                </figcaption>
+            </figure>
+            <button class ="curtir">
+            ❤️ Curtir <span>0</span>
+            </button>
+        </section>
+        </section>
+
+
+        <section id="cultura">
+
+            <h2>Importância cultural</h2>
+
+            <p>
+                Poty teve grande importância para a cultura do Paraná.
+                Suas obras retratam pessoas, lugares, acontecimentos históricos
+                e aspectos do cotidiano, especialmente de Curitiba e do Paraná.
+            </p>
+
+            <p>
+                A partir da década de 1950, Poty passou a se destacar também
+                pela produção de murais e painéis. Entre suas obras estão
+                o painel "Desenvolvimento Histórico do Paraná", na Praça
+                19 de Dezembro, e trabalhos realizados no Teatro Guaíra.
+            </p>
+
+            <p>
+                Sua arte ajudou a preservar visualmente parte da história
+                e da identidade cultural paranaense, tornando suas obras
+                importantes espaços de memória para a população.
+            </p>
+
+            <figure>
+                <img src="imagem_3.jpg"
+                    alt="Mural de Poty Lazzarotto">
+                <figcaption>
+                    Mural de Poty Lazzarotto em Curitiba.
+                    Fonte: Patrimônio Cultural do Paraná.
+                </figcaption>
+            </figure>
+             <button class ="curtir">
+            ❤️ Curtir <span>0</span>
+            </button>
+        </section>
+        </section>
+
+
+        <section id="curiosidades">
+
+            <h2>Curiosidades</h2>
+
+            <div class="card">
+                <h3>Curiosidade 1</h3>
                 <p>
-                    Um dos cartões-postais mais impressionantes
-                    de Curitiba, cercado pela natureza.
+                    Poty nasceu no mesmo dia do aniversário de Curitiba:
+                    29 de março.
                 </p>
-
-                <a href="#sobre" class="button">
-                    Conheça o lugar
-                </a>
             </div>
-        </section>
 
-        <!-- SOBRE -->
-        <section class="sobre" id="sobre">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>Sobre a Ópera de Arame</h2>
-                    <p>Arquitetura, cultura e natureza em um só lugar.</p>
-                </div>
-
-                <div class="sobre-grid">
-
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/8/82/%C3%93pera_de_Arame_-_Curitiba.jpg"
-                        alt="Ópera de Arame em Curitiba"
-                    >
-
-                    <div class="sobre-texto">
-                        <h3>Um símbolo de Curitiba</h3>
-
-                        <p>
-                            A Ópera de Arame é um dos espaços culturais
-                            mais conhecidos de Curitiba, no Paraná.
-                            Sua estrutura metálica e transparente
-                            cria uma aparência única em meio à vegetação.
-                        </p>
-
-                        <p>
-                            O espaço recebe apresentações culturais,
-                            shows e diferentes eventos ao longo do ano,
-                            tornando-se um importante ponto turístico
-                            e cultural da cidade.
-                        </p>
-
-                        <p>
-                            Sua arquitetura integrada à paisagem faz
-                            com que a visita seja uma experiência
-                            especial tanto durante o dia quanto à noite.
-                        </p>
-                    </div>
-
-                </div>
+            <div class="card">
+                <h3>Curiosidade 2</h3>
+                <p>
+                    Em 1967, Poty viajou para o Xingu, onde teve contato
+                    com comunidades indígenas. Essa experiência influenciou
+                    sua produção artística.
+                </p>
             </div>
-        </section>
 
-        <!-- CARDS -->
-        <section>
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>O que torna o lugar especial?</h2>
-                    <p>Algumas características que chamam a atenção dos visitantes.</p>
-                </div>
-
-                <div class="cards">
-
-                    <div class="card">
-                        <div class="icon">🏗️</div>
-                        <h3>Arquitetura</h3>
-                        <p>
-                            Uma estrutura metálica marcante,
-                            que se destaca pela sua aparência
-                            leve e transparente.
-                        </p>
-                    </div>
-
-                    <div class="card">
-                        <div class="icon">🌳</div>
-                        <h3>Natureza</h3>
-                        <p>
-                            O espaço está integrado a uma área
-                            verde, proporcionando um cenário
-                            cercado por árvores e paisagens naturais.
-                        </p>
-                    </div>
-
-                    <div class="card">
-                        <div class="icon">🎭</div>
-                        <h3>Cultura</h3>
-                        <p>
-                            O local é utilizado para apresentações,
-                            shows e eventos culturais.
-                        </p>
-                    </div>
-
-                </div>
+            <div class="card">
+                <h3>Curiosidade 3</h3>
+                <p>
+                    Poty participou da criação do primeiro curso de gravura
+                    do Museu de Arte de São Paulo (MASP).
+                </p>
             </div>
-        </section>
 
-        <!-- CURIOSIDADES -->
-        <section class="curiosidades" id="curiosidades">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>Curiosidades</h2>
-                    <p>Descubra um pouco mais sobre esse ponto turístico.</p>
-                </div>
-
-                <div class="curiosidades-grid">
-
-                    <div class="curiosidade">
-                        <h3>📍 Localização</h3>
-                        <p>
-                            A Ópera de Arame fica em Curitiba,
-                            capital do estado do Paraná.
-                        </p>
-                    </div>
-
-                    <div class="curiosidade">
-                        <h3>🏛️ Estrutura</h3>
-                        <p>
-                            Sua estrutura metálica é uma das
-                            principais características que tornam
-                            o espaço facilmente reconhecível.
-                        </p>
-                    </div>
-
-                    <div class="curiosidade">
-                        <h3>🎶 Eventos</h3>
-                        <p>
-                            O espaço é conhecido por receber
-                            apresentações musicais e diversos
-                            eventos culturais.
-                        </p>
-                    </div>
-
-                    <div class="curiosidade">
-                        <h3>🌿 Paisagem</h3>
-                        <p>
-                            A construção está inserida em um
-                            cenário natural, criando uma combinação
-                            entre arquitetura e meio ambiente.
-                        </p>
-                    </div>
-
-                </div>
+            <div class="card">
+                <h3>Curiosidade 4</h3>
+                <p>
+                    O Museu Oscar Niemeyer recebeu milhares de obras
+                    de Poty Lazzarotto, formando uma importante coleção
+                    dedicada ao artista.
+                </p>
             </div>
+
         </section>
-
-        <!-- VISITA -->
-        <section class="visita" id="visita">
-
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>Planeje sua visita</h2>
-                    <p>Algumas informações para conhecer o local.</p>
-                </div>
-
-                <div class="info">
-
-                    <div class="info-box">
-                        <h3>📍 Onde fica?</h3>
-                        <p>
-                            Curitiba - Paraná, Brasil.
-                        </p>
-                    </div>
-
-                    <div class="info-box">
-                        <h3>🌎 Cidade</h3>
-                        <p>
-                            Curitiba é conhecida por seus
-                            parques, áreas verdes e atrações culturais.
-                        </p>
-                    </div>
-
-                    <div class="info-box">
-                        <h3>📸 Dica</h3>
-                        <p>
-                            A arquitetura e o entorno natural
-                            rendem ótimas fotografias.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
     </main>
 
-    <footer>
-        <p>
-            © 2026 - Site sobre a Ópera de Arame de Curitiba
-        </p>
 
-        <p>
-            Desenvolvido em HTML e CSS.
-        </p>
+    <footer>
+
+        <p>Site desenvolvido por: Sofia Bonato Leffer</p>
+TURMA:1°E
+
+        <p>Projeto Educação Digital</p>
+
     </footer>
 
 </body>
-</html>
+
+</html> 
